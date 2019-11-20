@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
-
+import { Link } from "gatsby"
 import { Container } from "../../global"
 import {
   Nav,
@@ -15,7 +14,7 @@ import {
   ActionsContainer,
 } from "./style"
 
-const NAV_ITEMS = ["Features", "Product", "Pricing", ""]
+const NAV_ITEMS = ['About'];
 
 export default class Navigation extends Component {
   state = {
@@ -27,7 +26,7 @@ export default class Navigation extends Component {
     window.addEventListener("scroll", this.handleScroll)
   }
 
-  handleScroll = event => {
+  handleScroll = () => {
     const scrollTop = window.pageYOffset
 
     if (scrollTop > 32) {
@@ -48,9 +47,9 @@ export default class Navigation extends Component {
   }
 
   getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
+    <Link to={item === 'Home' ? '/' : item.toLowerCase()} onClick={this.closeMobileMenu}>
       {item}
-    </AnchorLink>
+    </Link>
   )
 
   getNavList = ({ mobile = false }) => (
@@ -76,9 +75,9 @@ export default class Navigation extends Component {
         <StyledContainer>
           <Brand>
             <Scrollspy offset={-64} item={["top"]} currentClassName="active">
-              <AnchorLink href="#top" onClick={this.closeMobileMenu}>
-                Finance
-              </AnchorLink>
+              <Link to="/" onClick={this.closeMobileMenu}>
+                yoke
+              </Link>
             </Scrollspy>
           </Brand>
           <Mobile>
@@ -89,14 +88,14 @@ export default class Navigation extends Component {
               {this.state.mobileMenuOpen ? (
                 <X size={24} alt="close menu" />
               ) : (
-                <Menu size={24} alt="open menu" />
-              )}
+                  <Menu size={24} alt="open menu" />
+                )}
             </button>
           </Mobile>
 
           <Mobile hide>{this.getNavList({})}</Mobile>
           <ActionsContainer>
-            <button>Sign up</button>
+            <button>Sign up for early access</button>
           </ActionsContainer>
         </StyledContainer>
         <Mobile>

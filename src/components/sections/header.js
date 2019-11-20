@@ -2,15 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
-
 import { Container } from "../global"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "team-sport" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
@@ -27,15 +26,14 @@ const Header = () => {
       <Container>
         <Flex>
           <HeaderTextGroup>
-            <Subtitle>Personal Finance</Subtitle>
             <h1>
-              All your money,
-              <br />
-              one account
+              Find your fitness partner, conquer your fitness goals
             </h1>
             <h2>
-              We're building next generation personal finance tools. Sign up to
-              get early access.
+              Are you a keen runner, lifter, yoga master, but looking for someone to share your sport with? Are you motivated to exercise with a partner or a team?
+            </h2>
+            <h2>
+              This app is for you. Yoke is designed to help you meet people with a shared passion for fitness. Sign up for early access.
             </h2>
             <HeaderForm onSubmit={handleSubmit}>
               <HeaderInput placeholder="Your email" />
@@ -59,10 +57,8 @@ const Header = () => {
 export default Header
 
 const HeaderWrapper = styled.header`
-  background-color: #f8f8f8;
-  padding: 160px 0 80px 0;
+  padding: 160px 0 0 0;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
   }
 `
@@ -171,7 +167,7 @@ const HeaderButton = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   white-space: nowrap;
-  background: ${props => props.theme.color.secondary};
+  background: #F96361;
   border-radius: 4px;
   padding: 0px 40px;
   border-width: 0px;
