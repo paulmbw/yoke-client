@@ -11,8 +11,9 @@ import {
   NavListWrapper,
   MobileMenu,
   Mobile,
-  ActionsContainer,
 } from "./style"
+import styled from 'styled-components';
+
 
 const NAV_ITEMS = ['About'];
 
@@ -75,9 +76,9 @@ export default class Navigation extends Component {
         <StyledContainer>
           <Brand>
             <Scrollspy offset={-64} item={["top"]} currentClassName="active">
-              <Link to="/" onClick={this.closeMobileMenu}>
+              <StyledLink to="/" onClick={this.closeMobileMenu}>
                 yoke
-              </Link>
+              </StyledLink>
             </Scrollspy>
           </Brand>
           <Mobile>
@@ -94,9 +95,6 @@ export default class Navigation extends Component {
           </Mobile>
 
           <Mobile hide>{this.getNavList({})}</Mobile>
-          <ActionsContainer>
-            <button>Sign up for early access</button>
-          </ActionsContainer>
         </StyledContainer>
         <Mobile>
           {mobileMenuOpen && (
@@ -109,3 +107,8 @@ export default class Navigation extends Component {
     )
   }
 }
+
+const StyledLink = styled(Link)`
+  font-size: 40px;
+`;
+

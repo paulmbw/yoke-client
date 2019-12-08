@@ -3,72 +3,15 @@ import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import { Container } from "../global"
+import { animateScroll as scroll } from 'react-scroll'
 
-const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "team-sport" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-  `)
-
-  const handleSubmit = event => {
-    event.preventDefault()
-  }
-
-  return (
-    <HeaderWrapper id="top">
-      <Container>
-        <Flex>
-          <HeaderTextGroup>
-            <h1>
-              Find your fitness partner, conquer your fitness goals
-            </h1>
-            <h2>
-              Are you a keen runner, lifter, yoga master, but looking for someone to share your sport with? Are you motivated to exercise with a partner or a team?
-            </h2>
-            <h2>
-              This app is for you. Yoke is designed to help you meet people with a shared passion for fitness. Sign up for early access.
-            </h2>
-            <HeaderForm onSubmit={handleSubmit}>
-              <HeaderInput placeholder="Your email" />
-              <HeaderButton>Early access</HeaderButton>
-            </HeaderForm>
-            <FormSubtitle>
-              Already have a beta account?{" "}
-              <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle>
-          </HeaderTextGroup>
-          <Text>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
-            <br />
-          </Text>
-        </Flex>
-      </Container>
-    </HeaderWrapper>
-  )
-}
-
-export default Header
 
 const HeaderWrapper = styled.header`
-  padding: 160px 0 0 0;
+  padding: 200px 0 0 0;
   position: relative;
   @media (max-width: ${props => props.theme.screen.md}) {
   }
 `
-const Subtitle = styled.h5`
-  font-size: 16px;
-  color: ${props => props.theme.color.accent};
-  letter-spacing: 0px;
-  margin-bottom: 16px;
-`
-
 const HeaderTextGroup = styled.div`
   margin: 0;
 
@@ -107,54 +50,66 @@ const Flex = styled.div`
   }
 `
 
-const HeaderForm = styled.form`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 16px;
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    flex-direction: column;
-  }
-`
-
-const FormSubtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-`
-
-const FormSubtitleLink = styled(Link)`
-  color: ${props => props.theme.color.secondary};
-  padding-bottom: 1px;
-  margin-left: 8px;
-  text-decoration: none;
-  border-bottom: 1px solid ${props => props.theme.color.secondary};
-`
-
-const HeaderInput = styled.input`
-  font-weight: 500;
-  font-size: 16px;
-  color: ${props => props.theme.color.primary};
-  line-height: 42px;
-  width: 100%;
-  text-align: left;
-  height: 60px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${props => props.theme.color.secondary};
-  border-image: initial;
-  border-radius: 4px;
-  padding: 8px 16px;
-  outline: 0px;
-  &:focus {
-    box-shadow: inset ${props => props.theme.color.secondary} 0px 0px 0px 2px;
-  }
+const Text = styled.div`
+  justify-self: end;
+  align-self: center;
   @media (max-width: ${props => props.theme.screen.md}) {
-    margin-bottom: 8px;
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    display: block;
-    width: 100%;
+    justify-self: center;
   }
 `
+
+const StyledImage = styled(Img)`
+  width: 650px;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 400px;
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    width: 300px;
+    display: none;
+  }
+`
+
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(sourceInstanceName: { eq: "product" }, name: { eq: "team-sport" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <HeaderWrapper id="top">
+      <Container>
+        <Flex>
+          <HeaderTextGroup>
+            <h1>
+              Find workout partners nearby
+            </h1>
+            <h2>
+              Are you a keen runner, lifter, yoga master, but tired of training alone? Are you looking
+              for a workout to share your passion for sport and keep you motivated?
+            </h2>
+            <h2>
+              This app is for you. Yoke is an easy way to find someone to train with. Sign up for early access.
+            </h2>
+
+            <HeaderButton onClick={() => scroll.scrollToBottom()}> Sign up for early access</HeaderButton>
+            <h2>Read our why <Link to="/about">here</Link>.</h2>
+          </HeaderTextGroup>
+          <Text>
+            <StyledImage fluid={data.file.childImageSharp.fluid} />
+            <br />
+          </Text>
+        </Flex>
+      </Container>
+    </HeaderWrapper>
+  )
+}
 
 const HeaderButton = styled.button`
   font-weight: 500;
@@ -163,7 +118,6 @@ const HeaderButton = styled.button`
   letter-spacing: 1px;
   height: 60px;
   display: block;
-  margin-left: 8px;
   text-transform: uppercase;
   cursor: pointer;
   white-space: nowrap;
@@ -184,21 +138,5 @@ const HeaderButton = styled.button`
     margin-left: 0;
   }
 `
-const Text = styled.div`
-  justify-self: end;
-  align-self: center;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: center;
-  }
-`
 
-const StyledImage = styled(Img)`
-  width: 500px;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    width: 400px;
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    width: 300px;
-    display: none;
-  }
-`
+export default Header

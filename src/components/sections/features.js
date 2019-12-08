@@ -17,59 +17,6 @@ const StyledHTMLImage = styled.img`
   }
 `;
 
-const Features = () => {
-  return (
-    <Section id="features">
-      <StyledContainer>
-        <Subtitle>Features</Subtitle>
-        <FlexRow>
-          <FlexColumn>
-            <FeatureTitle>
-              Find your sport
-          </FeatureTitle>
-            <FeatureText>
-              Whether its running, weightlifting, or yoga, Yoke brings people together from all different kinds of sports,
-              helping you find your match.
-          </FeatureText>
-          </FlexColumn>
-          <FlexColumn>
-            <StyledHTMLImage src={sportIllistration} width="400px" />
-          </FlexColumn>
-        </FlexRow>
-        <FlexRow>
-          <FlexColumn>
-            <StyledHTMLImage src={teamIllistration} width="500px" />
-          </FlexColumn>
-          <FlexColumn>
-            <FeatureTitle>
-              Find your patner
-          </FeatureTitle>
-            <FeatureText>
-              Yoke is all about meeting your fintess partner and sharing your sport. Whether in a pair or a  group, exercising can be done together.
-          </FeatureText>
-          </FlexColumn>
-        </FlexRow>
-        <FlexRow>
-          <FlexColumn>
-            <FeatureTitle>
-              Conquer your fitness goals
-          </FeatureTitle>
-            <FeatureText>
-              Our platform will help you connect with like minded people to motivate you and help you achieve your goals through challenges
-              and competitions.
-          </FeatureText>
-          </FlexColumn>
-          <FlexColumn>
-            <StyledHTMLImage src={successIllistration} width="300px" />
-          </FlexColumn>
-        </FlexRow>
-      </StyledContainer>
-    </Section>
-  )
-}
-
-export default Features
-
 export const StyledContainer = styled(Container)`
   /* transform: skewY(5deg);
   border-radius: 4px;
@@ -115,3 +62,58 @@ export const FeatureText = styled.p`
   font-size: 24px;
   line-height: 36px;
 `;
+
+
+const Features = () => {
+  return (
+    <Section id="features">
+      <StyledContainer>
+        <Subtitle>Features</Subtitle>
+        <FlexRow>
+          <FlexColumn>
+            <FeatureTitle>
+              Find your sport
+          </FeatureTitle>
+            <FeatureText>
+              If you're into running, weightlifting or yoga, Yoke brings together people from all sporting backgrounds
+              to help you find the fitness activity you're looking for.
+          </FeatureText>
+          </FlexColumn>
+          <FlexColumn>
+            <StyledHTMLImage src={sportIllistration} width="400px" />
+          </FlexColumn>
+        </FlexRow>
+        <FlexRow>
+          <FlexColumn>
+            <StyledHTMLImage src={teamIllistration} width="500px" />
+          </FlexColumn>
+          <FlexColumn>
+            <FeatureTitle>
+              Find your patner
+          </FeatureTitle>
+            <FeatureText>
+              Yoke is all about meeting your fintess partner and sharing your sport.
+              You can pair up with someone or team up with a group to push each other to the limit.
+          </FeatureText>
+          </FlexColumn>
+        </FlexRow>
+        <FlexRow>
+          <FlexColumn>
+            <FeatureTitle>
+              Conquer your fitness goals
+          </FeatureTitle>
+            <FeatureText>
+              Manage your progress with Yoke. Our platform allows you to define goals for you and your team to
+              help you achieve.
+          </FeatureText>
+          </FlexColumn>
+          <FlexColumn>
+            <StyledHTMLImage src={successIllistration} width="300px" />
+          </FlexColumn>
+        </FlexRow>
+      </StyledContainer>
+    </Section>
+  )
+}
+
+export default Features

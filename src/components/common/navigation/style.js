@@ -27,8 +27,8 @@ export const NavListWrapper = styled.div`
     flex-direction: row;
 
     ${({ mobile }) =>
-      mobile &&
-      `
+    mobile &&
+    `
         flex-direction: column;
         margin-top: 1em;
 
@@ -94,7 +94,7 @@ export const ActionsContainer = styled.div`
     font-family: ${props => props.theme.font.normal};
     ${props => props.theme.font_size.xsmall};
     color: white;
-    background: #098b8c;
+    background: #F96361;
     border-radius: 4px;
     padding: 10px 16px;
     text-transform: uppercase;
