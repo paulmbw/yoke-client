@@ -88,14 +88,17 @@ const Header = () => {
         <Flex>
           <HeaderTextGroup>
             <h1>
-              Find workout partners nearby
+              Find people to train with, anytime, anywhere
             </h1>
             <h2>
-              Are you a keen runner, lifter, yoga master, but tired of training alone? Are you looking
-              for a workout to share your passion for sport and keep you motivated?
+              Are you a keen runner, lifter, yogi, but tired of training alone?
+              Are you looking for a workout partner to share your passion for sport
+              and keep you motivated?
             </h2>
             <h2>
-              This app is for you. Yoke is an easy way to find someone to train with. Sign up for early access.
+              This app is for you. Yoke is the best place to
+              find people to train with, anytime, anywhere.
+              Sign up for early access.
             </h2>
 
             <HeaderButton onClick={() => scroll.scrollToBottom()}> Sign up for early access</HeaderButton>

@@ -32,7 +32,7 @@ export const SectionTitle = styled.h3`
 `;
 
 export const Subtitle = styled.h5`
-  font-size: 16px;
+  font-size: 29px;
   color: ${props => props.theme.color.accent};
   letter-spacing: 0px;
   margin-bottom: 12px;
@@ -68,15 +68,14 @@ const Features = () => {
   return (
     <Section id="features">
       <StyledContainer>
-        <Subtitle>Features</Subtitle>
+        <Subtitle>How yoke works</Subtitle>
         <FlexRow>
           <FlexColumn>
             <FeatureTitle>
               Find your sport
           </FeatureTitle>
             <FeatureText>
-              If you're into running, weightlifting or yoga, Yoke brings together people from all sporting backgrounds
-              to help you find the fitness activity you're looking for.
+              Simply choose your sport (weightlifting, yoga etc.), define your goal (run a half-marathon) and create a routine that works around your life.
           </FeatureText>
           </FlexColumn>
           <FlexColumn>
@@ -89,22 +88,21 @@ const Features = () => {
           </FlexColumn>
           <FlexColumn>
             <FeatureTitle>
-              Find your patner
+              Find your partner
           </FeatureTitle>
             <FeatureText>
-              Yoke is all about meeting your fintess partner and sharing your sport.
-              You can pair up with someone or team up with a group to push each other to the limit.
+              Using your location and preferences such as fitness level and schedule, Yoke will match you with fitness partners nearby.
+              Once matched, you can send requests to work out with your fitness partner or team.
           </FeatureText>
           </FlexColumn>
         </FlexRow>
         <FlexRow>
           <FlexColumn>
             <FeatureTitle>
-              Conquer your fitness goals
+              Conquer your goals
           </FeatureTitle>
             <FeatureText>
-              Manage your progress with Yoke. Our platform allows you to define goals for you and your team to
-              help you achieve.
+              Track your progress, share results, and cheer each other on while you conquer your fitness goals.
           </FeatureText>
           </FlexColumn>
           <FlexColumn>

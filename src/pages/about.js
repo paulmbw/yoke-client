@@ -24,11 +24,11 @@ const AboutPage = () => (
     <SEO title="About" />
     <Section>
       <AboutContainer>
-        <h2>Why Yoke? Why now?</h2>
+        <h2>Why Yoke?</h2>
         <StyledText>
           Yoke was born from a frustration of wanting to go for a run but not knowing anyone (especially in
           my area) to go for a run with. Sure, I could always go up to a random stranger, who also happens
-          to be running too, and ask "hey, mind if I join?" Easy, right? Wrong. 
+          to be running too, and ask "hey, mind if I join?" Easy, right? Wrong.
         </StyledText>
         <StyledText>
           For someone as introverted as me, simply asking someone to join in thier run is something
@@ -45,7 +45,7 @@ const AboutPage = () => (
         </StyledText>
         <h2>How?</h2>
         <StyledText>
-          Yoke is interested in three things about you; your particular sport, how often you train, and your level of fitness. With this in mind,
+          Yoke is interested in four things about you; your location, your particular sport, how often you train, and your level of fitness. With this in mind,
           our platform will match you with other people who are also similar in criteria, helping you find your fitness partner in crime.
         </StyledText>
         <StyledText>

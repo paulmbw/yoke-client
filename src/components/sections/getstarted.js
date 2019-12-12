@@ -18,6 +18,14 @@ const validationSchema = Yup.object().shape({
     .required("Please enter your email")
 });
 
+const ThankYouComponent = () => (
+  <TextContainer>
+    <Heading>Thank you for registering. Yoke is currently under development, but we will notify you as soon as we launch.</Heading>
+    <Text>We are also collecting information about our potenatial users to help build the best product. Please fill out the
+      following <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQ3hdJ9YayYJwlCJSQltGFghI2sifj0ILIODjdKx0nPJVAbg/viewform?usp=sf_link">questionnaire.</a>
+    </Text>
+  </TextContainer>
+)
 
 const SignupForm = () => {
   const [formValues, setFormValues] = React.useState();
@@ -101,7 +109,7 @@ const SignupForm = () => {
             <Submit type="submit" disabled={!isValid || isSubmitting}>
               {isSubmitting ? `Submiting...` : `Submit`}
             </Submit>
-          </Form> : <h2>Thanks!</h2>
+          </Form> : <ThankYouComponent />
         );
       }}
     </Formik>
@@ -110,10 +118,10 @@ const SignupForm = () => {
 
 const GetStarted = () => (
   <StyledSection>
-    <GetStartedContainer>
-      <GetStartedTitle>Sign up for early access and find workout partners nearby</GetStartedTitle>
+    <TextContainer>
+      <Heading>Sign up for early access and find workout partners nearby</Heading>
       <SignupForm />
-    </GetStartedContainer>
+    </TextContainer>
   </StyledSection>
 )
 
@@ -123,7 +131,7 @@ const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.light};
     `
 
-const GetStartedContainer = styled(Container)`
+const TextContainer = styled(Container)`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -131,10 +139,17 @@ const GetStartedContainer = styled(Container)`
   width: 520px;
 `;
 
-const GetStartedTitle = styled.h3`
-      margin: 0 auto 32px;
-      text-align: center;
-    `;
+const Heading = styled.h3`
+  margin: 0 auto 32px;
+  text-align: center;
+`;
+
+const Text = styled.p`
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+`;
+
 
 export const Title = styled.h1`
   font-size: 1rem;
