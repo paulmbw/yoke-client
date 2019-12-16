@@ -7,12 +7,6 @@ import { Container, Section } from "../global";
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 const validationSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, "Your name is too short")
-    .required("Please enter your first name"),
-  secondName: Yup.string()
-    .min(2, "Your name is too short")
-    .required("Please enter your second name"),
   email: Yup.string()
     .email("The email is incorrect")
     .required("Please enter your email")
@@ -34,8 +28,6 @@ const SignupForm = () => {
   return (
     <Formik
       initialValues={{
-        firstName: "",
-        secondName: "",
         email: ""
       }}
       validationSchema={validationSchema}
@@ -44,12 +36,11 @@ const SignupForm = () => {
 
         if (values) showForm(false);
 
-        const { firstName, secondName, email } = values;
-        const listFields = { FNAME: firstName, LNAME: secondName }
+        const { email } = values;
 
         const timeOut = setTimeout(async () => {
           actions.setSubmitting(false);
-          await addToMailchimp(email, listFields);
+          await addToMailchimp(email);
           clearTimeout(timeOut);
         }, 1000);
       }}
@@ -63,34 +54,6 @@ const SignupForm = () => {
       }) => {
         return (
           form === true ? <Form name="contact" method="post" onSubmit={handleSubmit}>
-            <Input
-              type="text"
-              name="firstName"
-              autoCorrect="off"
-              autoComplete="name"
-              placeholder="First name"
-              valid={touched.firstName && !errors.firstName}
-              error={touched.firstName && errors.firstName}
-            />
-            {errors.firstName && touched.firstName && (
-              <StyledInlineErrorMessage>
-                {errors.firstName}
-              </StyledInlineErrorMessage>
-            )}
-            <Input
-              type="text"
-              name="secondName"
-              autoCorrect="off"
-              autoComplete="name"
-              placeholder="Second name"
-              valid={touched.secondName && !errors.secondName}
-              error={touched.secondName && errors.secondName}
-            />
-            {errors.secondName && touched.secondName && (
-              <StyledInlineErrorMessage>
-                {errors.secondName}
-              </StyledInlineErrorMessage>
-            )}
             <Input
               type="email"
               name="email"
