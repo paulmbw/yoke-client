@@ -72,10 +72,10 @@ const Features = () => {
         <FlexRow>
           <FlexColumn>
             <FeatureTitle>
-              Pick your sport
+              Create your profile
           </FeatureTitle>
             <FeatureText>
-              Pick your favourite sports to find people with the same interests to train with
+              Create a profile to connect with people to train with, coaches and the wider fitness network to help you on your journey.
           </FeatureText>
           </FlexColumn>
           <FlexColumn>
@@ -91,18 +91,17 @@ const Features = () => {
               Build your team
           </FeatureTitle>
             <FeatureText>
-            Train with people that push you to be better. Create or join a group based on your interests, set team goals, plan sessions 
-            and meet up and train
+            Create or join a community based on your interests, location and schedule to train with people that push you to be better.
           </FeatureText>
           </FlexColumn>
         </FlexRow>
         <FlexRow>
           <FlexColumn>
             <FeatureTitle>
-              Grow together
+              Win together
           </FeatureTitle>
             <FeatureText>
-              
+              Share the journey, compete in group challenges and enter competitions with your team. Work together to achieve goals and win prizes.
           </FeatureText>
           </FlexColumn>
           <FlexColumn>
