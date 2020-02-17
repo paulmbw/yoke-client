@@ -91,14 +91,12 @@ const Header = () => {
               Find people to train with, anytime, anywhere
             </h1>
             <h2>
-              Are you a keen runner, lifter, yogi, but tired of training alone?
-              Are you looking for a workout partner to share your passion for sport
-              and keep you motivated?
+              Are you passionate about keeping fit but tired of training alone? 
+              Are you looking for someone to motivate you, hold you accountable, and share the journey with?
             </h2>
             <h2>
               This app is for you. Yoke is the best place to
               find people to train with, anytime, anywhere.
-              Sign up for early access.
             </h2>
 
             <HeaderButton onClick={() => scroll.scrollToBottom()}> Sign up for early access</HeaderButton>

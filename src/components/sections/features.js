@@ -72,10 +72,10 @@ const Features = () => {
         <FlexRow>
           <FlexColumn>
             <FeatureTitle>
-              Find your sport
+              Create your profile
           </FeatureTitle>
             <FeatureText>
-              Simply choose your sport (weightlifting, yoga etc.), define your goal (run a half-marathon) and create a routine that works around your life.
+              Create a profile to connect with people to train with, coaches and the wider fitness network to help you on your journey.
           </FeatureText>
           </FlexColumn>
           <FlexColumn>
@@ -88,21 +88,20 @@ const Features = () => {
           </FlexColumn>
           <FlexColumn>
             <FeatureTitle>
-              Find your partner
+              Build your team
           </FeatureTitle>
             <FeatureText>
-              Using your location and preferences such as fitness level and schedule, Yoke will match you with fitness partners nearby.
-              Once matched, you can send requests to work out with your fitness partner or team.
+            Create or join a community based on your interests, location and schedule to train with people that push you to be better.
           </FeatureText>
           </FlexColumn>
         </FlexRow>
         <FlexRow>
           <FlexColumn>
             <FeatureTitle>
-              Conquer your goals
+              Win together
           </FeatureTitle>
             <FeatureText>
-              Track your progress, share results, and cheer each other on while you conquer your fitness goals.
+              Share the journey, compete in group challenges and enter competitions with your team. Work together to achieve goals and win prizes.
           </FeatureText>
           </FlexColumn>
           <FlexColumn>
