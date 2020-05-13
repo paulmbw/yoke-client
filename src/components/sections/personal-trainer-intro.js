@@ -69,7 +69,7 @@ const StyledImage = styled(Img)`
   }
 `
 
-const Header = () => {
+const PTHeader = () => {
   const data = useStaticQuery(graphql`
     query {
       file(sourceInstanceName: { eq: "product" }, name: { eq: "team-sport" }) {
@@ -88,20 +88,18 @@ const Header = () => {
         <Flex>
           <HeaderTextGroup>
             <h1>
-              Find people to train with, anytime, anywhere
+              Meet Yoke, your personal trainer management tool
             </h1>
             <h2>
-              Are you passionate about keeping fit but tired of training alone? 
-              Are you looking for someone to motivate you, hold you accountable, and share the journey with?
+                Are you a personal trainer looking to improve your clientel? Are you looking for a 
+                place to easily manage and track what exercises your clients have, and how they are 
+                progressing?
             </h2>
             <h2>
-              This app is for you. Yoke is the best place to
-              find people to train with, anytime, anywhere.
+              This app is for you. Yoke for Personal Trainers is the best place 
             </h2>
 
             <HeaderButton onClick={() => scroll.scrollToBottom()}> Sign up for early access</HeaderButton>
-            <h2>Read our why <Link to="/about">here</Link>.</h2>
-            <h2>Are you a personal trainer? We'd love yo hear more. Click <Link to="/personal-trainers">here</Link>.</h2>
           </HeaderTextGroup>
           <Text>
             <StyledImage fluid={data.file.childImageSharp.fluid} />
@@ -141,4 +139,4 @@ const HeaderButton = styled.button`
   }
 `
 
-export default Header
+export default PTHeader
